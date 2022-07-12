@@ -2,6 +2,8 @@ package ru.neology.ticketmanager;
 import ru.neology.domain.Ticket;
 import ru.neology.repository.TicketRepository;
 
+import java.util.Arrays;
+
 public class TicketManager {
 
     private final TicketRepository repository;
@@ -31,6 +33,7 @@ public class TicketManager {
         }
 
 
+        Arrays.sort(result);
         return result;
 
     }
