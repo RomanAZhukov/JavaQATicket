@@ -1,14 +1,14 @@
 package ru.neology.domain;
 
 
- public class Main {
+public class Main {
     public static void main(String[] args) {
         Ticket ticket1 = new Ticket(
                 1,
                 2000,
                 "VKO",
                 "KZN",
-                100
+                150
         );
 
 
