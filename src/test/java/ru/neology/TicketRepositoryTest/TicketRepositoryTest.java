@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import ru.neology.domain.Ticket;
 import ru.neology.repository.TicketRepository;
 import ru.neology.ticketmanager.NotFoundException;
-
+import ru.neology.ticketmanager.TicketManager;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -72,6 +72,7 @@ public class TicketRepositoryTest {
             repo.removeTicketById(4);
         });
     }
+
 
 
 }

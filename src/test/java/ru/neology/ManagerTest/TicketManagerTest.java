@@ -15,9 +15,12 @@ public class TicketManagerTest {
     Ticket ticket1 = new Ticket(1, 200, "SVO", "KZN", 130);
     Ticket ticket2 = new Ticket(2, 800, "VKO", "LED", 480);
     Ticket ticket3 = new Ticket(3, 300, "VOZ", "DME", 45);
-    Ticket ticket4 = new Ticket(4, 400, "KUF", "GOJ", 90);
+    Ticket ticket4 = new Ticket(4, 400, "LED", "GOJ", 90);
     Ticket ticket5 = new Ticket(5, 550, "IST", "AER", 180);
     Ticket ticket6 = new Ticket(6, 800, "VKO", "LED", 480);
+    Ticket ticket7 = new Ticket(1, 250, "SVO", "KZN", 135);
+    Ticket ticket8 = new Ticket(1, 280, "SVO", "KZN", 140);
+    Ticket ticket9 = new Ticket(1, 270, "SVO", "KZN", 125);
     @BeforeEach
     public void setUp() {
         manager.add(ticket1);
@@ -26,12 +29,15 @@ public class TicketManagerTest {
         manager.add(ticket4);
         manager.add(ticket5);
         manager.add(ticket6);
+        manager.add(ticket7);
+        manager.add(ticket8);
+        manager.add(ticket9);
     }
 
     @Test
     public void shouldSearchOneTicket() {
-        Ticket[] expected = {ticket1};
-        Ticket[] actual = manager.findAll("SVO", "KZN");
+        Ticket[] expected = {ticket5};
+        Ticket[] actual = manager.findAll("IST", "AER");
 
         assertArrayEquals(expected, actual);
     }
@@ -50,4 +56,17 @@ public class TicketManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+    @Test
+    public void sortByPrice() {
+
+
+        Ticket[] expected = {ticket1, ticket7, ticket9, ticket8};
+
+
+        Ticket[] actual = manager.findAll("SVO","KZN");
+        assertArrayEquals(expected, actual);
+    }
+
+
+
 }

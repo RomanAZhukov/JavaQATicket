@@ -4,9 +4,12 @@ import ru.neology.repository.TicketRepository;
 
 import java.util.Arrays;
 
+import static java.util.Arrays.*;
+
 public class TicketManager {
 
     private final TicketRepository repository;
+
 
     public TicketManager(TicketRepository repository) {
         this.repository = repository;
